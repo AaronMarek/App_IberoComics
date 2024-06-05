@@ -1,0 +1,79 @@
+<!-- activity_comic.xml -->
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/orange"
+    tools:context=".activity.PagesActivity">
+
+    <TextView
+        android:id="@+id/comicTitleTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_centerHorizontal="true"
+        android:text="Comic Title"
+        android:textSize="24sp" />
+
+    <TextView
+        android:id="@+id/chapterTitleTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/comicTitleTextView"
+        android:layout_marginTop="16dp"
+        android:layout_centerHorizontal="true"
+        android:text="Chapter Title"
+        android:textSize="20sp" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/pagesRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/chapterTitleTextView"
+        android:layout_marginTop="16dp"
+        android:padding="16dp"/>
+
+    <LinearLayout
+        android:id="@+id/navigationButtonsLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal"
+        android:weightSum="3"
+        android:padding="16dp">
+
+        <Button
+            android:id="@+id/btnPrevious"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Previous"
+            android:textColor="@android:color/white"
+            android:textSize="16sp"
+            android:padding="16dp"
+            android:fontFamily="@font/bangers_regular"/>
+
+        <Button
+            android:id="@+id/btnChapters"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Chapters"
+            android:textColor="@android:color/white"
+            android:textSize="16sp"
+            android:padding="16dp"
+            android:fontFamily="@font/bangers_regular"/>
+
+        <Button
+            android:id="@+id/btnNext"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Next"
+            android:textColor="@android:color/white"
+            android:textSize="16sp"
+            android:padding="16dp"
+            android:fontFamily="@font/bangers_regular"/>
+
+    </LinearLayout>
+</RelativeLayout>

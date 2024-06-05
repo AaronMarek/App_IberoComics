@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/orange">
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        android:layout_above="@id/llButtons"/>
+
+    <LinearLayout
+        android:id="@+id/llButtons"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="2dp"
+        android:background="@mipmap/ic_launcher_background"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btnHome"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:fontFamily="@font/bangers_regular"
+            android:text="@string/homeText" />
+
+        <Button
+            android:id="@+id/btnShuffle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:fontFamily="@font/bangers_regular"
+            android:text="@string/shuffleText" />
+
+        <Button
+            android:id="@+id/btnUsers"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:fontFamily="@font/bangers_regular"
+            android:text="@string/usersText" />
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btnShuffleRandom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Aleatorio"
+        android:fontFamily="@font/bangers_regular"
+        android:layout_above="@id/llButtons"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="16dp"/>
+
+</RelativeLayout>

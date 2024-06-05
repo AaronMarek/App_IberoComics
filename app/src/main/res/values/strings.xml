@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">IberiComics</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+    <string name="shuffleText">Shuffle</string>
+    <string name="usersText">Usuario</string>
+    <string name="homeText">Home</string>
+    <string name="cerrar_sesionText">Cerrar sesión</string>
+    <string name="Returnbtn">Return</string>
+</resources>

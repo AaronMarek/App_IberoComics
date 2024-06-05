@@ -1,0 +1,44 @@
+<!-- res/layout/activity_chapter.xml -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/orange">
+
+    <!-- Título del cómic -->
+    <TextView
+        android:id="@+id/tvComicTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="24sp"
+        android:layout_margin="16dp"
+        android:fontFamily="@font/bangers_regular"/>
+
+    <!-- RecyclerView para capítulos -->
+    <Button
+        android:id="@+id/addToFavoritesButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tvComicTitle"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp"
+        android:text="Add to Favorites"
+        android:fontFamily="@font/bangers_regular"/>
+
+    <ListView
+        android:id="@+id/chapterListView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/addToFavoritesButton"
+        android:layout_marginTop="16dp"/>
+
+    <!-- Botón de retroceso -->
+    <Button
+        android:id="@+id/btnBack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="Back"
+        android:fontFamily="@font/bangers_regular"/>
+
+</LinearLayout>
