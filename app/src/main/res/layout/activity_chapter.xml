@@ -14,22 +14,21 @@
         android:layout_margin="16dp"
         android:fontFamily="@font/bangers_regular"/>
 
-    <!-- RecyclerView para capítulos -->
+    <!-- Botón para añadir a favoritos -->
     <Button
         android:id="@+id/addToFavoritesButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/tvComicTitle"
-        android:layout_centerHorizontal="true"
         android:layout_marginTop="16dp"
-        android:text="Add to Favorites"
+        android:text="@string/a_adir_a_favoritos"
         android:fontFamily="@font/bangers_regular"/>
 
-    <ListView
-        android:id="@+id/chapterListView"
+    <!-- RecyclerView para capítulos -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/chapterRecyclerView"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/addToFavoritesButton"
+        android:layout_height="0dp"
+        android:layout_weight="1"
         android:layout_marginTop="16dp"/>
 
     <!-- Botón de retroceso -->
@@ -38,7 +37,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:text="Back"
+        android:text="@string/volver"
         android:fontFamily="@font/bangers_regular"/>
 
 </LinearLayout>

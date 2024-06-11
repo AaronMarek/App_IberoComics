@@ -29,6 +29,11 @@ class HomeActivity : AppCompatActivity() {
         comicAdapter = RecyclerComic(this, comicList)
         binding.recyclerView.adapter = comicAdapter
 
+        // Añadir un cómic local
+        val localComic = Comic(id = -1, title = "comic 1", coverUrl = "android.resource://com.example.ibericomics/drawable/comic1", author = "pedro", userId = 1)
+        comicList.add(localComic)
+        comicAdapter.notifyDataSetChanged()
+
         // Obtener cómics desde la API
         fetchComics()
 
@@ -53,22 +58,16 @@ class HomeActivity : AppCompatActivity() {
                 if (response.isSuccessful) {
                     comicList.clear()
                     comicList.addAll(response.body()!!)
+                    // Añadir un cómic local
+                    val localComic = Comic(id = -1, title = "comic 1", coverUrl = "android.resource://com.example.ibericomics/drawable/comic1", author = "pedro", userId = 1)
+                    comicList.add(localComic)
                     comicAdapter.notifyDataSetChanged()
-                } else {
-                    // Manejar error de respuesta no exitosa
-                    showError("Error al obtener los cómics: ${response.message()}")
                 }
             }
 
             override fun onFailure(call: Call<List<Comic>>, t: Throwable) {
-                // Manejar fallo en la llamada
-                showError("Fallo en la conexión: ${t.message}")
+                // Manejar error
             }
         })
-    }
-
-    private fun showError(message: String) {
-        // Mostrar mensaje de error
-        // Puedes usar un Toast, Snackbar o cualquier otro método para mostrar el mensaje
     }
 }

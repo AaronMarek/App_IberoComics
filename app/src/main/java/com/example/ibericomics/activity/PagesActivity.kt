@@ -19,9 +19,6 @@ class PagesActivity : AppCompatActivity() {
         val comicTitle = intent.getStringExtra("comicTitle")
         val selectedChapter = intent.getStringExtra("selectedChapter")
 
-        binding.comicTitleTextView.text = comicTitle
-        binding.chapterTitleTextView.text = selectedChapter
-
         // Ejemplo de lista de imágenes para las páginas del cómic
         val pages = listOf(
             R.drawable.panel1, // Reemplaza con tus recursos de imágenes

@@ -8,8 +8,8 @@
     <!-- Imagen -->
     <ImageView
         android:id="@+id/imageComic"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="500dp"
+        android:layout_height="700dp"
         android:scaleType="centerCrop"
         android:adjustViewBounds="true"
         android:src="@mipmap/ic_launcher_foreground" />

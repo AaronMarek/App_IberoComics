@@ -3,35 +3,18 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/orange"
+    android:background="@color/black"
     tools:context=".activity.PagesActivity">
-
-    <TextView
-        android:id="@+id/comicTitleTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:layout_centerHorizontal="true"
-        android:text="Comic Title"
-        android:textSize="24sp" />
-
-    <TextView
-        android:id="@+id/chapterTitleTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/comicTitleTextView"
-        android:layout_marginTop="16dp"
-        android:layout_centerHorizontal="true"
-        android:text="Chapter Title"
-        android:textSize="20sp" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/pagesRecyclerView"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/chapterTitleTextView"
+        android:layout_height="612dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentBottom="true"
         android:layout_marginTop="16dp"
-        android:padding="16dp"/>
+        android:layout_marginBottom="103dp"
+        android:padding="16dp" />
 
     <LinearLayout
         android:id="@+id/navigationButtonsLayout"
@@ -47,7 +30,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Previous"
+            android:text="@string/anterior"
             android:textColor="@android:color/white"
             android:textSize="16sp"
             android:padding="16dp"
@@ -58,7 +41,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Chapters"
+            android:text="@string/capitulos"
             android:textColor="@android:color/white"
             android:textSize="16sp"
             android:padding="16dp"
@@ -69,7 +52,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Next"
+            android:text="@string/siguientes"
             android:textColor="@android:color/white"
             android:textSize="16sp"
             android:padding="16dp"

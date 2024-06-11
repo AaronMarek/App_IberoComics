@@ -6,7 +6,7 @@
         </trust-anchors>
         <domain-config cleartextTrafficPermitted="true"
             tools:ignore="NetworkSecurityConfig">
-            <domain includeSubdomains="true">localhost</domain>
+            <domain includeSubdomains="true">127.0.0.1</domain>
         </domain-config>
     </base-config>
 </network-security-config>

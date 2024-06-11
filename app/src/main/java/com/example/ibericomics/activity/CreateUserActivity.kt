@@ -23,7 +23,9 @@ class CreateUserActivity : AppCompatActivity() {
         binding.btnRegister.setOnClickListener {
             val username = binding.etUsername.text.toString()
             val password = binding.etPassword.text.toString()
-            val user = User(username = username, password = password)
+            val fullName = binding.etFullName.text.toString()
+            val email = binding.etEmail.text.toString()
+            val user = User(username = username, password = password, fullName = fullName, email = email)
             ApiService.api.register(user).enqueue(object : Callback<String> {
                 override fun onResponse(call: Call<String>, response: Response<String>) {
                     if (response.isSuccessful) {

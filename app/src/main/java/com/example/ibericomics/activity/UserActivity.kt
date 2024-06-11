@@ -17,52 +17,63 @@ class UserActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityUserBinding
     private lateinit var comicAdapter: RecyclerComic
-    private lateinit var comicList: MutableList<Comic>
+    private var comicList: MutableList<Comic> = mutableListOf()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityUserBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        // Configurar RecyclerView
         binding.recyclerView.layoutManager = LinearLayoutManager(this)
+        comicAdapter = RecyclerComic(this, comicList)
+        binding.recyclerView.adapter = comicAdapter
+
+        // Añadir un cómic local
+        val localComic = Comic(id = -1, title = "comic 1", coverUrl = "android.resource://com.example.ibericomics/drawable/comic1", author = "pedro", userId = 1)
+        comicList.add(localComic)
+        comicAdapter.notifyDataSetChanged()
 
         // Obtener cómics desde la API
-        ApiService.api.getAllComics().enqueue(object : Callback<List<Comic>> {
-            override fun onResponse(call: Call<List<Comic>>, response: Response<List<Comic>>) {
-                if (response.isSuccessful) {
-                    comicList = response.body()!!.toMutableList()
-                    comicAdapter = RecyclerComic(this@UserActivity, comicList)
-                    binding.recyclerView.adapter = comicAdapter
-
-                    comicAdapter.setOnItemClickListener { comic ->
-                        val intent = Intent(this@UserActivity, ChapterActivity::class.java)
-                        intent.putExtra("comicTitle", comic.title)
-                        startActivity(intent)
-                    }
-                }
-            }
-
-            override fun onFailure(call: Call<List<Comic>>, t: Throwable) {
-                // Manejar fallo
-            }
-        })
-
-        binding.btnHome.setOnClickListener {
-            startActivity(Intent(this, HomeActivity::class.java))
-            finish()
-        }
+        fetchComics()
 
         binding.btnShuffle.setOnClickListener {
             startActivity(Intent(this, ShuffleActivity::class.java))
             finish()
         }
 
-        binding.btnUsers.setOnClickListener {
-            // No es necesario iniciar nuevamente la UserActivity
+        binding.btnHome.setOnClickListener {
+            startActivity(Intent(this, HomeActivity::class.java))
+            finish()
+        }
+
+        binding.btnCambiarContraseA.setOnClickListener {
+            startActivity(Intent(this, ChangePasswordActivity::class.java))
+            finish()
         }
 
         binding.btnLogout.setOnClickListener {
-
+            startActivity(Intent(this, MainActivity::class.java))
+            finish()
         }
+    }
+
+    private fun fetchComics() {
+        ApiService.api.getAllComics().enqueue(object : Callback<List<Comic>> {
+            override fun onResponse(call: Call<List<Comic>>, response: Response<List<Comic>>) {
+                if (response.isSuccessful) {
+                    comicList.clear()
+                    comicList.addAll(response.body()!!)
+                    // Añadir un cómic local
+                    val localComic = Comic(id = -1, title = "comic 1", coverUrl = "android.resource://com.example.ibericomics/drawable/comic1", author = "pedro", userId = 1)
+                    comicList.add(localComic)
+                    comicAdapter.notifyDataSetChanged()
+                }
+            }
+
+            override fun onFailure(call: Call<List<Comic>>, t: Throwable) {
+                // Manejar error
+            }
+        })
     }
 }
