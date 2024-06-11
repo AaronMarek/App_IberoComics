@@ -94,17 +94,28 @@ RecyclerComic.kt
 
 Descripción: Clase de adaptador para reciclar y mostrar los cómics.
 
-Data Binding (Generadas)
+<h2>Data Binding (Generadas)</h2>
+
 ActivityChangePasswordBinding.java
+
 ActivityChapterBinding.java
+
 ActivityComicBinding.java
+
 ActivityCreateUserBinding.java
+
 ActivityHomeBinding.java
+
 ActivityMainBinding.java
+
 ActivityShuffleBinding.java
+
 ActivitySplashBinding.java
+
 ActivityUserBinding.java
+
 ChapterItemLayoutBinding.java
+
 ComicCardBinding.java
 
 
